@@ -131,9 +131,8 @@ void faz_classificados(TipoLista *Alunos, TipoLista *Cursos, int numcursos) {
             }
         }
         else { 
-            /*caso não haja vaga em nenhum
-              lista de espera dos 2 cursos
-              caso o aluno anterior possuir a mesma nota, mas foi inserido em sua op2 e é a op1 do atual*/
+            /*caso não haja vaga em nenhum, então irá colocar na lista de espera das 2 opcoes
+              mas se o aluno anterior possuir a mesma nota, mas foi inserido em sua op2 e é a op1 do atual (prioridade)*/
             if((AluAnterior->ItemAluno.Nota == Alu->ItemAluno.Nota) && (AluAnterior->ItemAluno.Op2 == Alu->ItemAluno.Op1)) {
                 desempate_classificado(&Classificados[Alu->ItemAluno.Op1], ClasAnterior[Alu->ItemAluno.Op1], Alu);
             }
